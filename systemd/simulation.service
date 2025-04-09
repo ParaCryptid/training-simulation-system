@@ -1,0 +1,15 @@
+
+[Unit]
+Description=Training Simulation System
+After=network.target
+
+[Service]
+User=robs3
+WorkingDirectory=/opt/training_simulation_system
+ExecStart=/usr/bin/python3 /opt/training_simulation_system/app.py
+EnvironmentFile=/opt/training_simulation_system/secrets/.env
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
